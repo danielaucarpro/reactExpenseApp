@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import AppRouter from './router/AppRouter';
+//importing only the global provider function, from the GlobalState component
+import { GlobalProvider } from './components/ContextAPI/GlobalState';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalProvider>
+      <AppRouter />
+    </GlobalProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
