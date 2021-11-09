@@ -23,10 +23,27 @@ export const GlobalProvider = ({ children }) => {
     //calling the reducer
     const [state, dispatch] = useReducer(AppReducer, inicialState);
 
+    //actions
+    const deleteTransaction = (id) => {
+        dispatch({
+            type: 'DELETE',
+            payload: id
+        });
+    };
+
+    const addTransaction = (newTRansaction) => {
+        dispatch({
+            type: 'ADD',
+            payload: newTRansaction
+        });
+    };
+
     //provider component
     return (
-        <GlobalContext.Provider value ={{
+        <GlobalContext.Provider value={{
             history: state.transactions,
+            deleteTransaction,
+            addTransaction
         }}>
             {children}
         </GlobalContext.Provider>
