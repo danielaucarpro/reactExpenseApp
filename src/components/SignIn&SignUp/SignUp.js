@@ -1,5 +1,7 @@
 //importing react router
 import { Link } from "react-router-dom";
+//pages
+import Header from "../Navbar/Header";
 //importing icons
 import LoginIcon from '@mui/icons-material/Login';
 
@@ -23,7 +25,7 @@ const SignUp = () => {
                 </div>
                 <button>Submit</button>
             </form>
-            <Link to='/'><LoginIcon/></Link>
+            <Header />
         </>
     );
 }
