@@ -1,26 +1,36 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
-//importing components
+//importing pages
+import Header from "../Navbar/Header";
+import Navbar from "../Navbar/Navbar";
 import Balance from './Balance';
+
 
 const Overview = () => {
 
     /*importing GlobalContext
     using destructuring to avoid messy code.
-    with out destructuring we need to context.history to map the array*/
+    with out destructuring we need to do context.history to map the array*/
     const { history } = useContext(GlobalContext);
+    const { deleteTransaction } = useContext(GlobalContext);
     console.log(history);
 
     return (
         <>
+            <Header />
             <div>Overview Page</div>
-            <Balance/>
+            <Balance />
             <h4>History</h4>
             {history.map(item => (
-                <li key={item.id}>
-                    {item.text}, {"$: " + Math.abs(item.amount)}
-                </li>
+                <div key={item.id}>
+                    <li>
+                        {item.text}, {"$: " + Math.abs(item.amount)}
+                    </li>
+                    <button onClick={() => deleteTransaction(item.id)}>X</button>
+                </div>
             ))}
+            <h4>Coming Up</h4>
+            <Navbar />
         </>
     );
 }
