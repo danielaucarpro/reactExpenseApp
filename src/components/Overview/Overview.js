@@ -1,7 +1,10 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
-//importing components
+//importing pages
+import Header from "../Navbar/Header";
+import Navbar from "../Navbar/Navbar";
 import Balance from './Balance';
+
 
 const Overview = () => {
 
@@ -14,6 +17,7 @@ const Overview = () => {
 
     return (
         <>
+            <Header />
             <div>Overview Page</div>
             <Balance />
             <h4>History</h4>
@@ -26,6 +30,7 @@ const Overview = () => {
                 </div>
             ))}
             <h4>Coming Up</h4>
+            <Navbar />
         </>
     );
 }
