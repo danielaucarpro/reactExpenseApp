@@ -2,8 +2,7 @@
 import { Link } from "react-router-dom";
 //pages
 import Header from "../Navbar/Header";
-//importing icons
-import LoginIcon from '@mui/icons-material/Login';
+
 
 
 const SignUp = () => {
