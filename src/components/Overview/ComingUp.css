@@ -1,0 +1,7 @@
+.comingUp-container{
+    display: flex !important;
+    justify-content: left !important;
+    align-items: flex-start !important;
+    font-size: 1rem;
+    color: #676767 !important;
+}

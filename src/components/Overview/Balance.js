@@ -1,5 +1,9 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
+//css
+import './Balance.css';
+//icons
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 
 const Balance = () => {
 
@@ -16,8 +20,11 @@ const Balance = () => {
 
     return (
         <>
-            <h4>This month balance</h4>
-            <p>{"$: " + total}</p>
+            <h4 className='balance-text'>This month balance</h4>
+            <span className='balance-amunt'>
+                <AttachMoneyIcon className='balance-icon'/>
+                {total}
+            </span>
         </>
     )
 }

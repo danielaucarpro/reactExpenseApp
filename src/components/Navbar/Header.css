@@ -1,0 +1,10 @@
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0rem;
+    padding: 0rem;
+}
+
+.header-menuIcon{
+    color: white;
+}

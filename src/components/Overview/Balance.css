@@ -1,0 +1,17 @@
+.balance-text{
+    color: white;
+    font-weight: 300;
+    color: whitesmoke;
+    font-size: .9rem;
+}
+
+.balance-amunt{
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.7rem;
+}
+
+.balance-icon{
+    font-size: medium;
+}
