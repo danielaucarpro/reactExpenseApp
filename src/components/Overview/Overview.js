@@ -1,9 +1,12 @@
 import React, { useContext } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
+//css
+import './Overview.css'
 //importing pages
 import Header from "../Navbar/Header";
 import Navbar from "../Navbar/Navbar";
 import Balance from './Balance';
+import ComingUp from "./ComingUp";
 
 
 const Overview = () => {
@@ -17,19 +20,25 @@ const Overview = () => {
 
     return (
         <>
-            <Header />
-            <div>Overview Page</div>
-            <Balance />
-            <h4>History</h4>
-            {history.map(item => (
-                <div key={item.id}>
-                    <li>
-                        {item.text}, {"$: " + Math.abs(item.amount)}
-                    </li>
-                    <button onClick={() => deleteTransaction(item.id)}>X</button>
+            <div className='overview-container'>
+                <Header />
+                <Balance />
+                <h6 className='overview-historyText'>History</h6>
+                {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE CLASS */}
+                <div className='overview-hostoryContainer'>
+                    {history.map(item => (
+                        <div key={item.id} className='overview-transaction negative'>
+                            <li className='overview-list'>
+                                <p>
+                                    {item.text} - {"$: " + Math.abs(item.amount)}
+                                </p>
+                                <button onClick={() => deleteTransaction(item.id)}>X</button>
+                            </li>
+                        </div>
+                    ))}
                 </div>
-            ))}
-            <h4>Coming Up</h4>
+            </div>
+            <ComingUp />
             <Navbar />
         </>
     );
