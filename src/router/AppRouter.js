@@ -18,8 +18,8 @@ const AppRouter = () => {
                     <Route path='/' element={<SignIn />} exact={true} />
                     <Route path='/signUp' element={<SignUp />} />
                     <Route path='overview' element={<Overview />} />
-                    <Route path='addTransaction' element={<Overview />} />
-                    <Route path='report' element={<Overview />} />
+                    {/* <Route path='addTransaction' element={<Overview />} />
+                    <Route path='report' element={<Overview />} /> */}
                 </Routes>
             </BrowserRouter>
         </div>
