@@ -1,0 +1,16 @@
+.navbar-container{
+    display: flex;
+    justify-content: space-evenly;
+    width: 20.45rem;
+    border-top: .1rem solid whitesmoke;
+    padding: 1rem;
+    align-items: center;
+}
+
+.navbar-icon{
+    color: lightgray;
+}
+
+.active{
+    color: #416EEE;
+}
