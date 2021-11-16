@@ -6,7 +6,7 @@ import AppRouter from './router/AppRouter';
 function App() {
   return (
     <>
-      <div>TEST</div>
+      <div>Expense App</div>
     </>
   );
 }
