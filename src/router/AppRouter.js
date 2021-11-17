@@ -6,6 +6,7 @@ import './AppRouter.css'
 import SignIn from "../components/SignIn&SignUp/SignIn";
 import SignUp from "../components/SignIn&SignUp/SignUp";
 import Overview from '../components/Overview/Overview';
+import AddPayment from '../components/AddPayment/AddPayment';
 
 //creating react router
 const AppRouter = () => {
