@@ -4,6 +4,8 @@ import { GlobalContext } from "../ContextAPI/GlobalState";
 import PopUp from './PopUp'
 //icons
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+//css
+import './History.css'
 
 export default function History(props) {
     console.log(props);
@@ -14,6 +16,7 @@ export default function History(props) {
     const { history } = useContext(GlobalContext);
     console.log(history);
     const { deleteTransaction } = useContext(GlobalContext);
+    const { updateTransaction } = useContext(GlobalContext);
     const [isUpdating, setIsUpdating] = useState(false);
 
     const popUpModal = () => {
@@ -42,7 +45,7 @@ export default function History(props) {
                                 <MoreHorizIcon onClick={popUpModal} />
                             </div>
                         </li>
-                        {isUpdating ? <PopUp close={closePopUp} delete={deleteTransaction} id={item.id} /> : null}
+                        {isUpdating ? <PopUp close={closePopUp} delete={deleteTransaction} id={item.id} update={updateTransaction} /> : null}
                     </div>
                 ))}
             </div>

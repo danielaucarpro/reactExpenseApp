@@ -15,6 +15,15 @@ const AppReducer = (state, action) => {
                 ...state,
                 transactions: [...state.transactions, action.payload]
             }
+        case 'UPDATE':
+            return {
+                ...state,
+                transactions: state.transactions.map((item)=>({
+                    ...state,
+                    text: item.id === action.payload.id ? item.text : action.payload.text,
+                    amount: item.id === action.payload.id ? item.amount : action.payload.amount
+                }))
+            }
         //the default AppReducer actions is to return the state as it is
         default:
             return state;

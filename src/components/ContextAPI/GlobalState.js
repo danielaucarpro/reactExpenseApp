@@ -42,12 +42,24 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
+    const updateTransaction = (updatedTransaction) => {
+        dispatch({
+            type: 'UPDATE',
+            payload: {
+                id: updatedTransaction.id,
+                text: updatedTransaction.text,
+                amount: updatedTransaction.amount
+            }
+        });
+    };
+
     //provider component
     return (
         <GlobalContext.Provider value={{
             history: state.transactions,
             deleteTransaction,
-            addTransaction
+            addTransaction,
+            updateTransaction
         }}>
             {children}
         </GlobalContext.Provider>
