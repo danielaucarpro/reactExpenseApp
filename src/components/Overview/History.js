@@ -1,5 +1,8 @@
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
+//material ui
+import Box from '@mui/material/Box';
+import Grid from '@mui/material/Grid';
 //pages
 import PopUp from './PopUp'
 //icons
@@ -8,31 +11,35 @@ import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import './History.css'
 
 export default function History(props) {
-    console.log(props);
 
     /*importing GlobalContext
     using destructuring to avoid messy code.
     with out destructuring we need to do context.history to map the array*/
     const { history } = useContext(GlobalContext);
-    console.log(history);
+    console.log(history, "history");
     const { deleteTransaction } = useContext(GlobalContext);
     const { updateTransaction } = useContext(GlobalContext);
-    const [isUpdating, setIsUpdating] = useState(false);
+    const [isUpdating, setIsUpdating] = useState({open: false, id: 0});
 
-    const popUpModal = () => {
-        console.log(isUpdating);
-        setIsUpdating(!isUpdating);
+    const popUpModal = (id) => {
+
+        setIsUpdating({
+            open: !isUpdating,
+            id
+        });
     }
     const closePopUp = () => {
-        setIsUpdating(false);
+        setIsUpdating({open: false});
     }
 
     return (
         <>
             {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE CLASS */}
             <div className='overview-historyContainer'>
-                {history.map(item => (
-                    <div key={item.id} className='overview-transaction negative'>
+                {history.map(item => {
+                    console.log(item.id, isUpdating, 'Value');
+                    return (
+                        <div key={item.id} className='overview-transaction negative'>
                         <li className='overview-list'>
                             <div className='overview-text'>
                                 <span>{item.text}</span>
@@ -42,12 +49,13 @@ export default function History(props) {
                                 <span>- {Math.abs(item.amount)}</span>
                             </div>
                             <div className='detailsIcon'>
-                                <MoreHorizIcon onClick={popUpModal} />
+                                <MoreHorizIcon onClick={() => popUpModal(item.id)} />
                             </div>
                         </li>
-                        {isUpdating ? <PopUp close={closePopUp} delete={deleteTransaction} id={item.id} update={updateTransaction} /> : null}
+                        {isUpdating.id === item.id ? <PopUp close={closePopUp} delete={deleteTransaction} update={updateTransaction} popUpData={isUpdating} /> : null}
                     </div>
-                ))}
+                    )
+                })}
             </div>
         </>
     )

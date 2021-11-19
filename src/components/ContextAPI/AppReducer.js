@@ -6,24 +6,16 @@ For this function to work we need the state and the action as parameters*/
 const AppReducer = (state, action) => {
     switch (action.type) {
         case 'DELETE':
-            return {
-                ...state,
-                transactions: state.transactions.filter(item => item.id !== action.payload)
-            }
+            return [...state, state.filter(item => item.id !== action.payload)];
         case 'ADD':
-            return {
-                ...state,
-                transactions: [...state.transactions, action.payload]
-            }
+            return [...state, action.payload];
         case 'UPDATE':
-            return {
-                ...state,
-                transactions: state.transactions.map((item)=>({
-                    ...state,
+            console.log(state, "REDUCER");
+            return state.map((item)=>({
                     text: item.id === action.payload.id ? item.text : action.payload.text,
                     amount: item.id === action.payload.id ? item.amount : action.payload.amount
                 }))
-            }
+            
         //the default AppReducer actions is to return the state as it is
         default:
             return state;

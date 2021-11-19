@@ -11,7 +11,7 @@ const Balance = () => {
     using destructuring to avoid messy code.
     with out destructuring we need to context.history to map the array*/
     const { history } = useContext(GlobalContext);
-    console.log(history);
+    console.log(history, "balance");
 
     //getting all the amounts into an array
     const amount = history.map(values => values.amount);

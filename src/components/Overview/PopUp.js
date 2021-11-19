@@ -2,11 +2,6 @@ import React, { useState } from 'react'
 
 
 const PopUp = (props) => {
-    //import comtext
-    //useState id
-    //call the dispatch function
-    //pass the id using payload
-
     console.log('pop up', props);
 
     const [newText, setNewText] = useState('');
@@ -20,12 +15,16 @@ const PopUp = (props) => {
     const submitForm = (e) => {
         e.preventDefault();
         let newData = {
-            id: props.id,
+  
             text: newText,
             amount: parseInt(newAmount)
         };
-        console.log(newData);
+        // console.log(newData);
         props.update(newData);
+    }
+
+    const closePopUp = () => {
+        props.close();
     }
 
     return (
@@ -41,6 +40,7 @@ const PopUp = (props) => {
                 </div>
                 <button type='submit'>update</button>
                 <button onClick={callDelete}>delete</button>
+                <button onClick={closePopUp}>close</button>
             </form>
         </>
     )

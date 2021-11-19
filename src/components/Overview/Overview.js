@@ -1,8 +1,9 @@
 import React, { useContext, useState } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
 //material ui
-import { styled } from '@mui/material/styles';
-import Paper from '@mui/material/Paper';
+import Box from '@mui/material/Box';
+import { sizing } from '@material-ui/system';
+import Grid from '@mui/material/Grid';
 //css
 import './Overview.css'
 //importing pages
@@ -16,14 +17,16 @@ const Overview = () => {
 
     return (
         <>
-            <div className='overview-container'>
-                <Header />
-                <Balance />
-                <h6 className='overview-historyText'>History</h6>
-                <History />
-            </div>
-            <ComingUp />
-            <Navbar />
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid xs={0} className='overview-container'>
+                    <Header />
+                    <Balance />
+                    <h6 className='overview-historyText'>History</h6>
+                    <History />
+                </Grid>
+                <ComingUp />
+                <Navbar />
+            </Box>
         </>
     );
 }
