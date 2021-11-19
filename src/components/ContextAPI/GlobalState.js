@@ -27,6 +27,7 @@ export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, inicialState);
 
     //actions
+    //delete
     const deleteTransaction = (id) => {
         dispatch({
             type: 'DELETE',
@@ -34,6 +35,7 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
+    //add
     const addTransaction = (newTRansaction) => {
         dispatch({
             type: 'ADD',
@@ -41,6 +43,7 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
+    //update 
     const updateTransaction = (updatedTransaction) => {
         console.log(updatedTransaction, "updated Transaction");
         dispatch({
