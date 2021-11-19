@@ -9,7 +9,7 @@ const PopUp = (props) => {
 
 
     const callDelete = () => {
-        props.delete(props.id);
+        props.delete(props.popUpData.id);
     }
 
     const submitForm = (e) => {
