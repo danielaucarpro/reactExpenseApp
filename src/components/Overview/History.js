@@ -19,7 +19,7 @@ export default function History(props) {
     console.log(history, "history");
     const { deleteTransaction } = useContext(GlobalContext);
     const { updateTransaction } = useContext(GlobalContext);
-    const [isUpdating, setIsUpdating] = useState({open: false, id: 0});
+    const [isUpdating, setIsUpdating] = useState({open: false});
 
     const popUpModal = (id) => {
 
