@@ -6,6 +6,7 @@ import './AppRouter.css'
 import SignIn from "../components/SignIn&SignUp/SignIn";
 import SignUp from "../components/SignIn&SignUp/SignUp";
 import Overview from '../components/Overview/Overview';
+import AddPayment from '../components/AddPayment/AddPayment';
 
 //creating react router
 const AppRouter = () => {
@@ -17,9 +18,9 @@ const AppRouter = () => {
                 <Routes>
                     <Route path='/' element={<SignIn />} exact={true} />
                     <Route path='/signUp' element={<SignUp />} />
-                    <Route path='overview' element={<Overview />} />
-                    <Route path='AddPayment' element={<AddPayment />} />
-                    <Route path='report' element={<Overview />} />
+                    <Route path='/overview' element={<Overview />} />
+                    <Route path='/addPayment' element={<AddPayment />} />
+                    <Route path='/report' element={<Overview />} />
                 </Routes>
             </BrowserRouter>
         </div>

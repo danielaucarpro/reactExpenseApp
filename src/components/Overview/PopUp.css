@@ -1,0 +1,12 @@
+.popUp-wrap {
+    margin: auto;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.137);
+}
