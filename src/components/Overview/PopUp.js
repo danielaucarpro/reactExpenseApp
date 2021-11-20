@@ -9,15 +9,15 @@ const PopUp = (props) => {
 
 
     const callDelete = () => {
-        props.delete(props.id);
+        props.delete(props.popUpData.id);
     }
 
     const submitForm = (e) => {
         e.preventDefault();
         let newData = {
-  
             text: newText,
-            amount: parseInt(newAmount)
+            amount: parseInt(newAmount),
+            id: props.popUpData.id
         };
         // console.log(newData);
         props.update(newData);

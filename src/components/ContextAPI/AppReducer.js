@@ -10,12 +10,21 @@ const AppReducer = (state, action) => {
         case 'ADD':
             return [...state, action.payload];
         case 'UPDATE':
-            console.log(state, "REDUCER");
-            return state.map((item)=>({
-                    text: item.id === action.payload.id ? item.text : action.payload.text,
-                    amount: item.id === action.payload.id ? item.amount : action.payload.amount
-                }))
-            
+            // console.log(state, "REDUCER");
+            // return state.map((item) => ({
+            //     text: item.id === action.payload.id ? item.text : action.payload.text,
+            //     amount: item.id === action.payload.id ? item.amount : action.payload.amount
+            // }))
+            let newState = state.map((item) => {
+                if (item.id === action.payload.id) {
+                    item.text = action.payload.text;
+                    item.amount = action.payload.amount;
+                }
+                return item;
+            })
+            console.log(newState, "NEW STATE");
+            return newState;
+
         //the default AppReducer actions is to return the state as it is
         default:
             return state;
