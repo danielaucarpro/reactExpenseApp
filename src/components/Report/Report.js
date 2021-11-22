@@ -3,7 +3,7 @@ import { SpentEarned } from './SpentEarned'
 import { Breakdown } from './Breakdown'
 
 
-export const Report = () => {
+const Report = () => {
   return (
     <>
       <h1>Report</h1>
@@ -12,3 +12,5 @@ export const Report = () => {
     </>
   )
 }
+
+export default Report;
