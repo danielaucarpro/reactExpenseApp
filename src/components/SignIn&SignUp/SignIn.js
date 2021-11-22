@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 //importing icons
 import LoginIcon from '@mui/icons-material/Login';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 
 const SignIn = () => {
