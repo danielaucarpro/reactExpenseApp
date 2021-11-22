@@ -1,0 +1,61 @@
+.overview-historyContainer {
+    justify-content: center;
+    align-items: center;
+    width: 100% !important;
+    margin: 0 !important;
+    gap: 1rem;
+    height: 15rem;
+    overflow-y: scroll;
+}
+
+.overview-transaction {
+    padding: .5rem !important;
+    border-radius: .8rem;
+}
+
+.css-1xgjpwf-MuiGrid-root{
+    width: 100%;
+    margin-left: 0rem;
+}
+
+.positive {
+    background-color: #31C56E;
+}
+
+.negative {
+    box-shadow: 0px 4px 4px 0px #00000040;
+    background-color: #BA382E;
+}
+
+.overview-list {
+    display: grid;
+    grid-template-columns: 33% 33% 10%;
+    gap: 2.5rem;
+    color: #f3f3f3;
+    padding: 1rem;
+    align-items: center;
+}
+
+.overview-text {
+    font-size: .9rem;
+}
+
+.overview-amount {
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailsIcon {
+    color: whitesmoke;
+    opacity: 85%;
+    font-size: small;
+    align-items: center;
+    justify-content: center;
+}
+
+.detailsIcon:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}

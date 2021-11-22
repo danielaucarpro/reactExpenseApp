@@ -1,42 +1,14 @@
-.overview-container{
+.overview-container {
     background-color: #416EEE;
     padding: 1rem;
     margin: 0;
     border-bottom-left-radius: 1rem;
     border-bottom-right-radius: 1rem;
     box-shadow: 0px 4px 4px 0px #00000040;
-    width: 20.45rem;
-}
-
-.overview-hostoryContainer{
-    height: 15rem;
     overflow-y: scroll;
 }
 
-.overview-historyText{
+.overview-historyText {
     color: #D1d1d1;
     font-size: .72rem;
-}
-
-.overview-transaction{
-    border-radius: .3rem;
-    padding: .3rem;
-    margin: .7rem 0rem;
-}
-
-.psotive{
-    background-color: #31C56E;
-}
-
-.negative{
-    box-shadow: 0px 4px 4px 0px #00000040;
-    background-color: #BA382E;
-}
-
-.overview-list{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    color: #f3f3f3;
-    font-size: 1.2rem;
 }

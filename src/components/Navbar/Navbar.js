@@ -1,4 +1,6 @@
 import React from 'react'
+//css
+import './Navbar.css'
 //importing react router modules
 import { Link } from "react-router-dom";
 //importing meterial ui icons
@@ -9,9 +11,11 @@ import PieChartIcon from '@mui/icons-material/PieChart';
 const Navbar = () => {
     return (
         <>
-            <Link to='/overview'><DashboardIcon/></Link>
-            <Link to='/AddPayment'><AddCircleIcon/></Link>
-            <Link to='/report'><PieChartIcon/></Link>
+            <div className='navbar-container'>
+                <Link className='navbar-icon active' to='/overview'><DashboardIcon /></Link>
+                <Link className='navbar-icon' to='/addPayment'><AddCircleIcon /></Link>
+                <Link className='navbar-icon' to='/report'><PieChartIcon /></Link>
+            </div>
         </>
     )
 }
