@@ -1,7 +1,16 @@
 import React, {useState,  useContext} from 'react'; 
+import './AddPayment.css'; 
 import { Link } from "react-router-dom";
 import {GlobalContext} from '../ContextAPI/GlobalState'; 
-import './AddPayment.css';
+//import {styled} from '@mui/material/styles';
+import Box from '@mui/material/Box';
+//import Grid from'@mui/material/Grid';
+import { Button, FormControl, Input, InputAdornment, InputLabel } from '@mui/material';
+import LabelIcon from '@mui/icons-material/Label';
+import TodayIcon from '@mui/icons-material/Today';
+import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
+import LoginIcon from '@mui/icons-material/Login';
+
 
 export const AddPayment = () => {
     //Hook. create state and a function to manipulate the state (setText and setAmount)
@@ -28,34 +37,78 @@ export const AddPayment = () => {
         addTransaction(newTRansaction); 
     }
 
+
+
     return (
         <>
            <h3>Add a Bill</h3>
 
-            <div className = "form-container">
+           <Box sx={{ display: 'flex', alignItems: 'flex-end', m:5}}>
+            
               <form onSubmit = {onSubmit}>
-                <div className = "form-control">
-                    <label htmlFor = "text">Name of the Purchansed Item</label>
-                    <br />
-                    {/* use onchange to update the state and call function to give us whatever is being typed */}
-                    <input type = "text" value ={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..."/>
-                </div>
-                <div className = "form-control">
-                    <label htmlFor = "text">Date</label>
-                    <br />
-                    <input type = "text" value ={date} onChange={(e) => setDate(e.target.value)} placeholder="Enter Date..."/>
-                </div>
-                <div className = "form-control">
-                    <label htmlFor = "amount">
-                        Amount <br />
-                    </label>
-                    <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="$ Enter amount..."/>
-                </div>
-                {/* <Link to='/overview' style={{ textDecoration: 'none', color:'white'}}> */}
-                    <button className="btn">Add Bill</button>
-                {/* </Link> */}
+                <FormControl variant="standard" sx={{m:5}}>
+                    <InputLabel htmlFor="text">
+                    Name of the Purchansed Item
+                    </InputLabel>
+                     {/* use onchange to update the state and call function to give us whatever is being typed */}
+                    <Input
+                       id="input-with-icon-purchaseditem"
+                       startAdornment={
+                           <InputAdornment position="start">
+                               <LabelIcon />
+                           </InputAdornment>
+                       }
+                       type = "text" 
+                       value ={text} onChange={(e) => setText(e.target.value)} 
+                       placeholder="Enter text.."
+                    />
+                </FormControl>
+
+                <br />
+
+                <FormControl variant="standard" sx={{m:5}}>
+                    <InputLabel htmlFor="text">
+                      Date
+                    </InputLabel>
+                     {/* use onchange to update the state and call function to give us whatever is being typed */}
+                    <Input
+                       id="input-with-icon-calender"
+                       startAdornment={
+                           <InputAdornment position="start">
+                               <TodayIcon />
+                           </InputAdornment>
+                       }
+                       input type = "date" 
+                       value ={date} onChange={(e) => setDate(e.target.value)} 
+                       placeholder="Enter Date..."
+                    />
+                </FormControl>
+
+                <br />
+
+                <FormControl variant="standard" sx={{m:5}}>
+                    <InputLabel htmlFor="text">
+                      Amount
+                    </InputLabel>
+                     {/* use onchange to update the state and call function to give us whatever is being typed */}
+                    <Input
+                       id="input-with-icon-calender"
+                       startAdornment={
+                           <InputAdornment position="start">
+                               <MonetizationOnIcon />
+                           </InputAdornment>
+                       }
+                       input type="number" 
+                       value={amount} onChange={(e) => setAmount(e.target.value)} 
+                       placeholder="$ Enter amount..."
+                    />
+                </FormControl>
+                
+                <br/>
+                    <Button　variant="contained" sx={{m:5}}>Add Bill</Button>
+                    <Link to='/overview'><LoginIcon /></Link>
               </form>
-            </div>
+            </Box>
         </>
     )
 }

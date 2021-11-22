@@ -10,7 +10,7 @@ const Navbar = () => {
     return (
         <>
             <Link to='/overview'><DashboardIcon/></Link>
-            <Link to='/addTransaction'><AddCircleIcon/></Link>
+            <Link to='/AddPayment'><AddCircleIcon/></Link>
             <Link to='/report'><PieChartIcon/></Link>
         </>
     )

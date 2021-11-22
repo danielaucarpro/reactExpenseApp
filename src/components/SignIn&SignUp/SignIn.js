@@ -2,6 +2,7 @@
 import { Link } from "react-router-dom";
 //importing icons
 import LoginIcon from '@mui/icons-material/Login';
+import AddCircleIcon from '@mui/icons-material/AddCircle';
 
 
 const SignIn = () => {
@@ -19,6 +20,7 @@ const SignIn = () => {
                 </div>
             </form>
             <Link to='/signUp'>Sing Up</Link>
+            <Link to='/AddPayment' style={{ textDecoration: 'none', color:'black'}}><AddCircleIcon/></Link>
             <Link to='/overview'><LoginIcon /></Link>
         </>
     );
