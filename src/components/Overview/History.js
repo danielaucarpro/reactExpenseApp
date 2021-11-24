@@ -4,7 +4,7 @@ import { GlobalContext } from "../ContextAPI/GlobalState";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 //pages
-import PopUp from './PopUp'
+import PopUp from './PopUp';
 //icons
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 //css
@@ -39,7 +39,7 @@ export default function History(props) {
                 <Grid
                     container
                     spacing={{ xs: 2, md: 3 }}
-                    columns={{ xs: 1, sm: 9, md: 12 }}
+                    columns={{ xs: 1, sm: 9, md: 12}}
                     className='overview-historyContainer'>
 
                     {history.map(item => {
