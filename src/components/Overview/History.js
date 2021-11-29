@@ -50,6 +50,9 @@ export default function History(props) {
                                     <div className='overview-text'>
                                         <span>{item.text}</span>
                                     </div>
+                                    <div className='overview-date'>
+                                        <span>{item.date}</span>
+                                    </div>
                                     <div className='overview-amount'>
                                         {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE SIGN */}
                                         <span>{item.amount > 0 ? '+' : '-'} {Math.abs(item.amount)}</span>
