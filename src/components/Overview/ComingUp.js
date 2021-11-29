@@ -34,7 +34,7 @@ const ComingUp = () => {
                 <h4 className='comingUp-text'>Coming Up</h4>
                 <div className='comingUp-cardContainer'>
                     {history.map((item) => (
-                        <div key={item.id} className='comingUp-card comingUp-positive'>
+                        <div key={item.id} className={`comingUp-card ${item.amount > 0 ? 'comingUp-positive' : 'comingUp-negative'}`}>
                             <div className='comingUp-header'>
                                 <span className='comingUp-itemName' >{item.text}</span>
                                 <MoreHorizIcon onClick={() => popUpModal(item.id)} className='comingUp-details' />

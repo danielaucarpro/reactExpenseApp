@@ -39,20 +39,20 @@ export default function History(props) {
                 <Grid
                     container
                     spacing={{ xs: 2, md: 3 }}
-                    columns={{ xs: 1, sm: 9, md: 12}}
+                    columns={{ xs: 1, sm: 9, md: 12 }}
                     className='overview-historyContainer'>
 
                     {history.map(item => {
                         console.log(item.id, isUpdating, 'Value');
                         return (
-                            <Grid item xs={1} sm={4} md={5} key={item.id} className='overview-transaction negative'>
+                            <Grid item xs={1} sm={4} md={5} key={item.id} className={`overview-transaction ${item.amount > 0 ? 'positive' : 'negative'}`}>
                                 <li className='overview-list'>
                                     <div className='overview-text'>
                                         <span>{item.text}</span>
                                     </div>
                                     <div className='overview-amount'>
                                         {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE SIGN */}
-                                        <span>- {Math.abs(item.amount)}</span>
+                                        <span>{item.amount > 0 ? '+' : '-'} {Math.abs(item.amount)}</span>
                                     </div>
                                     <div className='detailsIcon'>
                                         <MoreHorizIcon onClick={() => popUpModal(item.id)} />
