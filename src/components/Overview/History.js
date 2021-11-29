@@ -48,7 +48,7 @@ export default function History(props) {
                             <Grid item xs={1} sm={4} md={5} key={item.id} className={`overview-transaction ${item.amount > 0 ? 'positive' : 'negative'}`}>
                                 <li className='overview-list'>
                                     <div className='overview-text'>
-                                        <span>{item.text}</span>
+                                        <span>{item.text} - ({item.date})</span>
                                     </div>
                                     <div className='overview-amount'>
                                         {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE SIGN */}
