@@ -22,7 +22,6 @@ const AppRouter = () => {
                     <Route path='/overview' element={<Overview />} />
                     <Route path='/addPayment' element={<AddPayment />} />
                     <Route path='/report' element={<Report />} />
-
                 </Routes>
             </BrowserRouter>
         </div>

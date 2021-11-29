@@ -19,7 +19,7 @@ export default function History(props) {
     console.log(history, "history");
     const { deleteTransaction } = useContext(GlobalContext);
     const { updateTransaction } = useContext(GlobalContext);
-    const [isUpdating, setIsUpdating] = useState({open: false});
+    const [isUpdating, setIsUpdating] = useState({ open: false });
 
     const popUpModal = (id) => {
 
@@ -29,34 +29,41 @@ export default function History(props) {
         });
     }
     const closePopUp = () => {
-        setIsUpdating({open: false});
+        setIsUpdating({ open: false });
     }
 
     return (
         <>
             {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE CLASS */}
-            <div className='overview-historyContainer'>
-                {history.map(item => {
-                    console.log(item.id, isUpdating, 'Value');
-                    return (
-                        <div key={item.id} className='overview-transaction negative'>
-                        <li className='overview-list'>
-                            <div className='overview-text'>
-                                <span>{item.text}</span>
-                            </div>
-                            <div className='overview-amount'>
-                                {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE SIGN */}
-                                <span>- {Math.abs(item.amount)}</span>
-                            </div>
-                            <div className='detailsIcon'>
-                                <MoreHorizIcon onClick={() => popUpModal(item.id)} />
-                            </div>
-                        </li>
-                        {isUpdating.id === item.id ? <PopUp close={closePopUp} delete={deleteTransaction} update={updateTransaction} popUpData={isUpdating} /> : null}
-                    </div>
-                    )
-                })}
-            </div>
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid
+                    container
+                    spacing={{ xs: 2, md: 3 }}
+                    columns={{ xs: 1, sm: 9, md: 12 }}
+                    className='overview-historyContainer'>
+
+                    {history.map(item => {
+                        console.log(item.id, isUpdating, 'Value');
+                        return (
+                            <Grid item xs={1} sm={4} md={5} key={item.id} className='overview-transaction negative'>
+                                <li className='overview-list'>
+                                    <div className='overview-text'>
+                                        <span>{item.text}</span>
+                                    </div>
+                                    <div className='overview-amount'>
+                                        {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE SIGN */}
+                                        <span>- {Math.abs(item.amount)}</span>
+                                    </div>
+                                    <div className='detailsIcon'>
+                                        <MoreHorizIcon onClick={() => popUpModal(item.id)} />
+                                    </div>
+                                </li>
+                                {isUpdating.id === item.id ? <PopUp close={closePopUp} delete={deleteTransaction} update={updateTransaction} popUpData={isUpdating} /> : null}
+                            </Grid>
+                        )
+                    })}
+                </Grid>
+            </Box>
         </>
     )
 }

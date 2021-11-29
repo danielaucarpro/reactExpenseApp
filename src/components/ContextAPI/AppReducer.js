@@ -6,7 +6,12 @@ For this function to work we need the state and the action as parameters*/
 const AppReducer = (state, action) => {
     switch (action.type) {
         case 'DELETE':
-            return [...state, state.filter(item => item.id !== action.payload)];
+            let index = state.findIndex((expense) => expense.id === action.payload);
+            if (index !== -1) {
+                state.splice(index, 1);
+            }
+            return state;
+            // return [...state, state.splice(item => item.id !== action.payload)];
         case 'ADD':
             return [...state, action.payload];
         case 'UPDATE':
