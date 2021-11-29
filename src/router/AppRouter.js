@@ -20,7 +20,7 @@ const AppRouter = () => {
                     <Route path='/' element={<SignIn />} exact={true} />
                     <Route path='/signUp' element={<SignUp />} />
                     <Route path='/overview' element={<Overview />} />
-                    <Route path='/addPayment' element={<AddPayment />} />
+                    <Route path='/AddPayment' element={<AddPayment />} />
                     <Route path='/report' element={<Report />} />
                 </Routes>
             </BrowserRouter>
