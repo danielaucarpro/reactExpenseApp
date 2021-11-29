@@ -28,7 +28,7 @@ input {
     font-weight: bolder;
 }
 
-:hover {
+.btn:hover {
     cursor: pointer;
     outline: none;
     box-shadow: none;

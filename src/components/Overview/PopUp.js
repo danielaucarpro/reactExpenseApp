@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
-
+//css
+import './PopUp.css';
+//material ui
+import { Button } from '@mui/material';
+//icons
+import CancelIcon from '@mui/icons-material/Cancel';
 
 const PopUp = (props) => {
     console.log('pop up', props);
@@ -10,17 +15,27 @@ const PopUp = (props) => {
 
     const callDelete = () => {
         props.delete(props.popUpData.id);
+        closePopUp();
     }
 
     const submitForm = (e) => {
         e.preventDefault();
-        let newData = {
-            text: newText,
-            amount: parseInt(newAmount),
-            id: props.popUpData.id
-        };
-        // console.log(newData);
-        props.update(newData);
+        if (newText === '' || newAmount === '') {
+            alert('ERROR! Please put some value');
+        } else {
+            let newData = {
+                text: newText,
+                amount: parseInt(newAmount),
+                id: props.popUpData.id
+            };
+            // console.log(newData);
+            props.update(newData);
+            closePopUp();
+        }
+    }
+
+    const capitalizeFirstLetter = (string) => {
+        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     const closePopUp = () => {
@@ -29,20 +44,51 @@ const PopUp = (props) => {
 
     return (
         <>
-            <form onSubmit={submitForm}>
-                <div>
-                    <label>New text: </label>
-                    <input value={newText} type="text" placeholder='new text here...' onChange={(e) => setNewText(e.target.value)} />
+            {/* <div className='popUp-wrap'>
+                <div className='popUp'>
+                    <form className='popUp-formWrap ' onSubmit={submitForm}>
+
+                    </form>
                 </div>
-                <div>
-                    <label>New amount: </label>
-                    <input value={newAmount} type="text" placeholder='new amount here...' onChange={(e) => setNewAmount(e.target.value)} />
+            </div> */}
+            <div className='popUp-wrap '>
+                <div className='popUp'>
+                    <CancelIcon onClick={closePopUp} className='popUp-btn' />
+                    <div className='popUp-newPost'>
+                        <p>Update Transaction</p>
+                    </div>
+                    <div className='popUp-container'>
+                        <form onSubmit={submitForm}>
+                            <div className='popUp-inputContainer'>
+                                <div className='popUp-text'>
+                                    <label>New name: </label>
+                                </div>
+                                <input value={newText} type="text" placeholder='New name here...' onChange={(e) => setNewText(e.target.value)} />
+                            </div>
+                            <div className='popUp-inputContainer'>
+                                <div className='popUp-text'>
+                                    <label>New amount: </label>
+                                </div>
+                                <input value={newAmount} type="text" placeholder='New amount here...' onChange={(e) => setNewAmount(e.target.value)} />
+                            </div>
+                            <div className='popUp-btnContainer'>
+                                <Button
+                                    type='submit'
+                                    className='popUp-btnUpdate'
+                                    variant="contained"
+                                >Update</Button>
+                                <Button
+                                    onClick={callDelete}
+                                    className='popUp-btnUpdate delete'
+                                    variant="contained"
+                                >Delete</Button>
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <button type='submit'>update</button>
-                <button onClick={callDelete}>delete</button>
-                <button onClick={closePopUp}>close</button>
-            </form>
+            </div>
         </>
+
     )
 }
 
