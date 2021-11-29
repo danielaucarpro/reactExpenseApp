@@ -1,5 +1,9 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { GlobalContext } from "../ContextAPI/GlobalState";
+//material ui
+import Box from '@mui/material/Box';
+import { sizing } from '@material-ui/system';
+import Grid from '@mui/material/Grid';
 //css
 import './Overview.css'
 //importing pages
@@ -7,39 +11,22 @@ import Header from "../Navbar/Header";
 import Navbar from "../Navbar/Navbar";
 import Balance from './Balance';
 import ComingUp from "./ComingUp";
-
+import History from './History';
 
 const Overview = () => {
 
-    /*importing GlobalContext
-    using destructuring to avoid messy code.
-    with out destructuring we need to do context.history to map the array*/
-    const { history } = useContext(GlobalContext);
-    const { deleteTransaction } = useContext(GlobalContext);
-    console.log(history);
-
     return (
         <>
-            <div className='overview-container'>
-                <Header />
-                <Balance />
-                <h6 className='overview-historyText'>History</h6>
-                {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE CLASS */}
-                <div className='overview-hostoryContainer'>
-                    {history.map(item => (
-                        <div key={item.id} className='overview-transaction negative'>
-                            <li className='overview-list'>
-                                <p>
-                                    {item.text} - {"$: " + Math.abs(item.amount)}
-                                </p>
-                                <button onClick={() => deleteTransaction(item.id)}>X</button>
-                            </li>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <ComingUp />
-            <Navbar />
+            <Box sx={{ flexGrow: 1 }}>
+                <Grid xs={0} className='overview-container'>
+                    <Header />
+                    <Balance />
+                    <h6 className='overview-historyText'>History</h6>
+                    <History />
+                </Grid>
+                <ComingUp />
+                <Navbar />
+            </Box>
         </>
     );
 }

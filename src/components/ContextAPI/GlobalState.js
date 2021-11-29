@@ -3,8 +3,7 @@ import React, { createContext, useReducer } from "react";
 import AppReducer from './AppReducer';
 
 //Inicial State with dummy data
-const inicialState = {
-    transactions: [
+const inicialState = [
         { id: 1, text: 'Lunch', amount: -15 },
         { id: 2, text: 'Freelance Job', amount: 300 },
         { id: 3, text: 'Book', amount: -10 },
@@ -14,7 +13,7 @@ const inicialState = {
         { id: 7, text: 'Book', amount: -10 },
         { id: 8, text: 'Pharmacy', amount: -20 }
     ]
-}
+
 
 /* Creating Context
 exporting global state so other components can use it as data*/
@@ -28,6 +27,7 @@ export const GlobalProvider = ({ children }) => {
     const [state, dispatch] = useReducer(AppReducer, inicialState);
 
     //actions
+    //delete
     const deleteTransaction = (id) => {
         dispatch({
             type: 'DELETE',
@@ -35,19 +35,34 @@ export const GlobalProvider = ({ children }) => {
         });
     };
 
-    const addTransaction = (newTRansaction) => {
+    //add
+    const addTransaction = (newTransaction) => {
         dispatch({
             type: 'ADD',
-            payload: newTRansaction
+            payload: newTransaction
+        });
+    };
+
+    //update 
+    const updateTransaction = (updatedTransaction) => {
+        console.log(updatedTransaction, "updated Transaction");
+        dispatch({
+            type: 'UPDATE',
+            payload: {
+                id: updatedTransaction.id,
+                text: updatedTransaction.text,
+                amount: updatedTransaction.amount
+            }
         });
     };
 
     //provider component
     return (
         <GlobalContext.Provider value={{
-            history: state.transactions,
+            history: state,
             deleteTransaction,
-            addTransaction
+            addTransaction,
+            updateTransaction
         }}>
             {children}
         </GlobalContext.Provider>
