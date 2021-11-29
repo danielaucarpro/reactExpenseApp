@@ -4,7 +4,7 @@ import { GlobalContext } from "../ContextAPI/GlobalState";
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
 //pages
-import PopUp from './PopUp'
+import PopUp from './PopUp';
 //icons
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 //css
@@ -45,7 +45,7 @@ export default function History(props) {
                     {history.map(item => {
                         console.log(item.id, isUpdating, 'Value');
                         return (
-                            <Grid item xs={1} sm={4} md={5} key={item.id} className='overview-transaction negative'>
+                            <Grid item xs={1} sm={4} md={5} key={item.id} className={`overview-transaction ${item.amount > 0 ? 'positive' : 'negative'}`}>
                                 <li className='overview-list'>
                                     <div className='overview-text'>
                                         <span>{item.text}</span>
@@ -55,7 +55,7 @@ export default function History(props) {
                                     </div>
                                     <div className='overview-amount'>
                                         {/* CREATE CONDITIONAL FOR NEGATIVE OR POSITIVE SIGN */}
-                                        <span>- {Math.abs(item.amount)}</span>
+                                        <span>{item.amount > 0 ? '+' : '-'} {Math.abs(item.amount)}</span>
                                     </div>
                                     <div className='detailsIcon'>
                                         <MoreHorizIcon onClick={() => popUpModal(item.id)} />
