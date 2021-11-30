@@ -12,6 +12,9 @@ import Navbar from "../Navbar/Navbar";
 import Balance from './Balance';
 import ComingUp from "./ComingUp";
 import History from './History';
+//chart
+import MultiAxis from './Charts/MultiAxis';
+import Radar from './Charts/Radar';
 
 const Overview = () => {
 
@@ -25,6 +28,8 @@ const Overview = () => {
                     <History />
                 </Grid>
                 <ComingUp />
+                <MultiAxis/>
+                <Radar/>
                 <Navbar />
             </Box>
         </>

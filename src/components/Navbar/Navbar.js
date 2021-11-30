@@ -13,7 +13,7 @@ const Navbar = () => {
         <>
             <div className='navbar-container'>
                 <Link className='navbar-icon active' to='/overview'><DashboardIcon /></Link>
-                <Link className='navbar-icon' to='/addPayment'><AddCircleIcon /></Link>
+                <Link className='navbar-icon' to='/AddPayment'><AddCircleIcon /></Link>
                 <Link className='navbar-icon' to='/report'><PieChartIcon /></Link>
             </div>
         </>

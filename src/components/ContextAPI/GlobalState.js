@@ -4,14 +4,14 @@ import AppReducer from './AppReducer';
 
 //Inicial State with dummy data
 const inicialState = [
-        { id: 1, text: 'Lunch', amount: -15 },
-        { id: 2, text: 'Freelance Job', amount: 300 },
-        { id: 3, text: 'Book', amount: -10 },
-        { id: 4, text: 'Pharmacy', amount: -20 },
-        { id: 5, text: 'Lunch', amount: -15 },
-        { id: 6, text: 'Freelance Job', amount: 300 },
-        { id: 7, text: 'Book', amount: -10 },
-        { id: 8, text: 'Pharmacy', amount: -20 }
+        { id: 1, text: 'Lunch', amount: -15, date:'June 15' },
+        { id: 2, text: 'Freelance Job', amount: 300, date:'June 15' },
+        { id: 3, text: 'Book', amount: -10, date:'June 15' },
+        { id: 4, text: 'Pharmacy', amount: -20, date:'June 15' },
+        { id: 5, text: 'Lunch', amount: -15, date:'June 15' },
+        { id: 6, text: 'Freelance Job', amount: 300, date:'June 15' },
+        { id: 7, text: 'Book', amount: -10, date:'June 15' },
+        { id: 8, text: 'Pharmacy', amount: -20, date:'June 15' }
     ]
 
 
@@ -36,10 +36,10 @@ export const GlobalProvider = ({ children }) => {
     };
 
     //add
-    const addTransaction = (newTRansaction) => {
+    const addTransaction = (newTransaction) => {
         dispatch({
             type: 'ADD',
-            payload: newTRansaction
+            payload: newTransaction
         });
     };
 
