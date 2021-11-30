@@ -55,6 +55,8 @@
     ]
   },
   "devDependencies": {
+    "chart.js": "^3.6.0",
+    "react-chartjs-2": "^3.3.0",
     "@types/faker": "^5.5.9"
   }
 }

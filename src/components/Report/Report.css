@@ -1,0 +1,11 @@
+.container {
+  /* padding: 50px 20px; */
+  height: 80%;
+  margin-bottom: 3rem;  /* I will fix it */
+  background-color: rgb(241, 238, 238);
+}
+
+.text-left {
+  text-align: left;
+}
+
