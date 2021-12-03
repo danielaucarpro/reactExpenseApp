@@ -3,12 +3,12 @@ import './AddPayment.css';
 import { Link } from "react-router-dom";
 import {GlobalContext} from '../ContextAPI/GlobalState'; 
 import Box from '@mui/material/Box';
-import { Button, FormControl, Input, InputAdornment, InputLabel, MenuItem } from '@mui/material';
+import { Button, FormControl, Input, InputAdornment, InputLabel} from '@mui/material';
 import LabelIcon from '@mui/icons-material/Label';
 import TodayIcon from '@mui/icons-material/Today';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import LoginIcon from '@mui/icons-material/Login';
-import Select from 'react-select'; 
+
 
 
 export const AddPayment = () => {
@@ -51,7 +51,8 @@ export const AddPayment = () => {
                      {/* use onchange to update the state and call function to give us whatever is being typed */}
                     <Input
                        type = "text" 
-                       value ={text} onChange={(e) => setText(e.target.value)} 
+                       value ={text} 
+                       onChange={(e) => setText(e.target.value)} 
                        placeholder="Enter text.."
                        id="input-with-icon-purchaseditem"
                        startAdornment={
@@ -104,9 +105,15 @@ export const AddPayment = () => {
                 </FormControl>
                 
                 <br/>
-                    <Button　type="submit" variant="contained" sx={{m:5}}>Add Bill</Button>
-                    <Link to='/overview'><LoginIcon /></Link>
-                
+                    <Button type="submit" variant="contained"sx={{m:2}} >Add Bill</Button>
+                    <Button 
+                       type="submit" 
+                       variant="contained" 
+                       component={Link}
+                       to='/overview'
+                    >
+                        Back to page
+                    </Button>
               </form>
             </Box>
         </>
