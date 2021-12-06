@@ -1,7 +1,9 @@
-.container {
+
+.report-container {
   /* padding: 50px 20px; */
-  height: 80%;
-  margin-bottom: 3rem;  /* I will fix it */
+  margin: 0;
+  /* height: 80%; */
+  padding: 1rem 2rem 2rem 2rem;  /* I will fix it */
   background-color: rgb(241, 238, 238);
 }
 

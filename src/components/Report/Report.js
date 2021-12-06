@@ -4,10 +4,14 @@ import { Breakdown } from './Breakdown'
 import { Chart } from './Chart'
 import './Report.css'
 
+import Box from '@mui/material/Box';
+// import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+
 const Report = () => {
   return (
     <>
-      <div className = "container">
+      <div className = "report-container">
       <h1 className = "text-left">Report</h1>
       <Chart />
       <SpentEarned />

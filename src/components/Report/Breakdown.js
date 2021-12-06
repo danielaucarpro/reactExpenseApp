@@ -11,7 +11,7 @@ import { PolarArea } from 'react-chartjs-2';
 ChartJS.register(RadialLinearScale, ArcElement, Tooltip, Legend);
 
 export const data = {
-  labels: ['Dribble', 'Netflix', 'Skillshare', 'Spotify', 'Sketch', 'Ivnision'],
+  // labels: ['Dribble', 'Netflix', 'Skillshare', 'Spotify', 'Sketch', 'Ivnision'],
   datasets: [
     {
       label: '# of Votes',
@@ -27,6 +27,7 @@ export const data = {
       borderWidth: 1,
     },
   ],
+  labels: ['Dribble', 'Netflix', 'Skillshare', 'Spotify', 'Sketch', 'Ivnision'],
 };
 
 export function Breakdown() {
