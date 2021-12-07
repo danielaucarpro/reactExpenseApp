@@ -7,7 +7,7 @@ import './Report.css'
 const Report = () => {
   return (
     <>
-      <div className = "container">
+      <div className = "report-container">
       <h1 className = "text-left">Report</h1>
       <Chart />
       <SpentEarned />
