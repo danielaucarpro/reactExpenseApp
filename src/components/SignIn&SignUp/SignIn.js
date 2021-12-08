@@ -39,7 +39,10 @@ const SignIn = () => {
     return (
         <>
            <Box sx={{ display: 'flex', alignItems: 'flex-end', m:5}}>
-                <form onsubmit={handleFormSubmit}>
+                <form onSubmit={handleFormSubmit}>
+                    <Typography variant="h6" gutterBottom component="div" sx={{m:5, px:5}}>
+                        Sign In
+                    </Typography>
                     <FormControl variant="standard" sx={{m:5}}>
                         <InputLabel htmlFor="email">
                             Email:

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import {GlobalContext} from '../ContextAPI/GlobalState'; 
 //import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import { Button, FormControl, Input, InputAdornment, InputLabel} from '@mui/material';
+import { Button, FormControl, Input, InputAdornment, InputLabel, Typography} from '@mui/material';
 import LabelIcon from '@mui/icons-material/Label';
 import TodayIcon from '@mui/icons-material/Today';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
@@ -40,11 +40,18 @@ export const AddPayment = () => {
 
     return (
         <>
+<<<<<<< HEAD
+            <Box sx={{ display: 'flex', alignItems: 'flex-end', m:5}}>
+=======
            <h3>Add a Bill</h3>
+>>>>>>> f447ca1ea0637a73adaa524660f1167a0f118653
 
            <Box sx={{ display: 'flex', alignItems: 'flex-end', m:5}}>
             
               <form onSubmit = {onSubmit}>
+                <Typography variant="h6" gutterBottom component="div" sx={{m:5, px:5}}>
+                    Add a Bill
+                </Typography>
                 <FormControl variant="standard" sx={{m:5}}>
                     <InputLabel htmlFor="text">
                     Name of the Purchansed Item
