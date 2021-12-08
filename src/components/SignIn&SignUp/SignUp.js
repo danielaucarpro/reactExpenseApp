@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button, Input, FormControl, InputLabel, Typography  } from '@mui/material';
 import Box from '@mui/material/Box';
 import {useState} from 'react'; 
+import { palette } from '@mui/system';
 import Header from "../Navbar/Header";
 
 
@@ -37,6 +38,9 @@ const SignUp = () => {
         <>
             <Box sx={{ display: 'flex', alignItems: 'flex-end', m:5}}>
                 <form onSubmit={handleFormSubmit}>
+                    <Typography variant="h6" gutterBottom component="div" sx={{m:5, px:5}}>
+                        Sign Up
+                    </Typography>
                     <FormControl variant="standard" sx={{m:5}}>
                         <InputLabel htmlFor="name">
                             Name:
@@ -87,6 +91,14 @@ const SignUp = () => {
                         Already A Member? 
                         <Link to='/'> Sign In </Link>
                     </Typography>
+                    <Button 
+                       type="submit" 
+                       variant="contained" 
+                       component={Link}
+                       to='/overview'
+                    >
+                        Back to page
+                    </Button>
 
                 </form>
             </Box>
