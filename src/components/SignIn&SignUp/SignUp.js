@@ -91,15 +91,6 @@ const SignUp = () => {
                         Already A Member? 
                         <Link to='/'> Sign In </Link>
                     </Typography>
-                    <Button 
-                       type="submit" 
-                       variant="contained" 
-                       component={Link}
-                       to='/overview'
-                    >
-                        Back to page
-                    </Button>
-
                 </form>
             </Box>
         </>
