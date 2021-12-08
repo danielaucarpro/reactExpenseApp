@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import {GlobalContext} from '../ContextAPI/GlobalState'; 
 //import {styled} from '@mui/material/styles';
 import Box from '@mui/material/Box';
-//import Grid from'@mui/material/Grid';
-import { Button, FormControl, Input, InputAdornment, InputLabel } from '@mui/material';
+import { Button, FormControl, Input, InputAdornment, InputLabel} from '@mui/material';
 import LabelIcon from '@mui/icons-material/Label';
 import TodayIcon from '@mui/icons-material/Today';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
@@ -52,6 +51,10 @@ export const AddPayment = () => {
                     </InputLabel>
                      {/* use onchange to update the state and call function to give us whatever is being typed */}
                     <Input
+                       type = "text" 
+                       value ={text} 
+                       onChange={(e) => setText(e.target.value)} 
+                       placeholder="Enter text.."
                        id="input-with-icon-purchaseditem"
                        startAdornment={
                            <InputAdornment position="start">
@@ -105,8 +108,15 @@ export const AddPayment = () => {
                 </FormControl>
                 
                 <br/>
-                    <Button type='submit'　variant="contained" sx={{m:5}}>Add Bill</Button>
-                    <Link to='/overview'><LoginIcon /></Link>
+                    <Button type="submit" variant="contained"sx={{m:2}} >Add Bill</Button>
+                    <Button 
+                       type="submit" 
+                       variant="contained" 
+                       component={Link}
+                       to='/overview'
+                    >
+                        Back to page
+                    </Button>
               </form>
             </Box>
         </>
