@@ -56,13 +56,16 @@
 }
 
 .comingUp-date {
-    font-size: .7rem;
+    font-size: .8rem;
     color: #676767;
     margin: .1rem 0rem;
 }
 
 .comingUp-amount {
     font-size: 1.2rem;
+}
+.comingUp-noExpense{
+    color: lightgray;
 }
 
 /* RESPONSIVE DESIGN */

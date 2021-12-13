@@ -8,3 +8,27 @@
 .header-menuIcon{
     color: white;
 }
+
+.signin-container{
+    border: 1px solid black;
+}
+
+.signin-form{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+}
+
+.sign-title{
+    background-color: #416EEE;
+    color: white;
+    height: 6rem;
+    width: 18rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signin-member{
+    margin-top: 2rem !important;
+}
