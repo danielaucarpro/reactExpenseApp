@@ -60,3 +60,14 @@
     cursor: pointer;
     transform: scale(1.2);
 }
+
+.history-noExpense{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: white;
+}
+
+.history-link{
+    color: white;
+}
