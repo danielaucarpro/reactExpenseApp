@@ -1,20 +1,11 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 //importing Reducer
 import AppReducer from './AppReducer';
-
-// const response = fetch('http://localhost:5000/getTransactions', {
-//     method: "GET",
-//     headers: {
-//         'x-access-token': localStorage.getItem('access-token'),
-//     }
-// })
-
-// const data = await response.json();
-// console.log(data, "data");
-// alert(data.message);
+//importing db data
+import FetchUsersTransactions from './FetchUsersTransactions';
 
 //Inicial State with dummy data
-const inicialState = [
+let inicialState = [
     { id: 1, text: 'Lunch', amount: -15, date: '2021-12-17' },
     { id: 2, text: 'Freelance Job', amount: 300, date: '2021-12-19' },
     { id: 3, text: 'Book', amount: -10, date: '2021-11-17' },
@@ -36,6 +27,9 @@ We need to pass children as a props*/
 export const GlobalProvider = ({ children }) => {
     //calling the reducer
     const [state, dispatch] = useReducer(AppReducer, inicialState);
+    //user data from database
+    const userTransactions = [FetchUsersTransactions()];
+    console.log(userTransactions[0]);
 
     //update inicial state
     const updateInicialState = () => {
