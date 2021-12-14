@@ -1,8 +1,5 @@
-import React, { useContext, useState } from "react";
-import { GlobalContext } from "../ContextAPI/GlobalState";
 //material ui
 import Box from '@mui/material/Box';
-import { sizing } from '@material-ui/system';
 import Grid from '@mui/material/Grid';
 //css
 import './Overview.css'
@@ -28,8 +25,8 @@ const Overview = () => {
                     <History />
                 </Grid>
                 <ComingUp />
-                <MultiAxis/>
-                <Radar/>
+                <MultiAxis />
+                <Radar />
                 <Navbar />
             </Box>
         </>
