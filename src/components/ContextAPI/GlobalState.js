@@ -1,18 +1,20 @@
-import React, { createContext, useReducer } from "react";
+import React, { createContext, useReducer, useEffect } from "react";
 //importing Reducer
 import AppReducer from './AppReducer';
+//importing db data
+import FetchUsersTransactions from './FetchUsersTransactions';
 
 //Inicial State with dummy data
-const inicialState = [
-        { id: 1, text: 'Lunch', amount: -15, date:'June 15' },
-        { id: 2, text: 'Freelance Job', amount: 300, date:'June 15' },
-        { id: 3, text: 'Book', amount: -10, date:'June 15' },
-        { id: 4, text: 'Pharmacy', amount: -20, date:'June 15' },
-        { id: 5, text: 'Lunch', amount: -15, date:'June 15' },
-        { id: 6, text: 'Freelance Job', amount: 300, date:'June 15' },
-        { id: 7, text: 'Book', amount: -10, date:'June 15' },
-        { id: 8, text: 'Pharmacy', amount: -20, date:'June 15' }
-    ]
+let inicialState = [
+    { id: 1, text: 'Lunch', amount: -15, date: '2021-12-17' },
+    { id: 2, text: 'Freelance Job', amount: 300, date: '2021-12-19' },
+    { id: 3, text: 'Book', amount: -10, date: '2021-11-17' },
+    { id: 4, text: 'Pharmacy', amount: -20, date: '2022-01-17' },
+    { id: 5, text: 'Lunch', amount: -15, date: '2021-12-24' },
+    { id: 6, text: 'Freelance Job', amount: 300, date: '2021-12-01' },
+    { id: 7, text: 'Book', amount: -10, date: '2021-12-10' },
+    { id: 8, text: 'Pharmacy', amount: -20, date: '2021-12-10' },
+]
 
 
 /* Creating Context
@@ -25,6 +27,14 @@ We need to pass children as a props*/
 export const GlobalProvider = ({ children }) => {
     //calling the reducer
     const [state, dispatch] = useReducer(AppReducer, inicialState);
+    //user data from database
+    const userTransactions = [FetchUsersTransactions()];
+    console.log(userTransactions[0]);
+
+    //update inicial state
+    const updateInicialState = () => {
+        inicialState = state;
+    }
 
     //actions
     //delete
@@ -62,7 +72,8 @@ export const GlobalProvider = ({ children }) => {
             history: state,
             deleteTransaction,
             addTransaction,
-            updateTransaction
+            updateTransaction,
+            updateInicialState
         }}>
             {children}
         </GlobalContext.Provider>

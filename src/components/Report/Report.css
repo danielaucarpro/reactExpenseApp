@@ -1,9 +1,16 @@
+<<<<<<< HEAD
 
 .report-container {
   padding: 50px 20px;
   margin: 0;
   /* height: 80%; */
   padding: 1rem 2rem 2rem 2rem;  /* I will fix it */
+=======
+.report-container {
+  /* padding: 50px 20px; */
+  height: 80%;
+  padding-bottom: 3rem;  /* I will fix it */
+>>>>>>> ecea3e57368b41a460077ef60e4d7000bfa2d6cd
   background-color: rgb(241, 238, 238);
   /* display: flex;
   justify-content: center; */

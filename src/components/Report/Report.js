@@ -10,8 +10,12 @@ import Grid from '@mui/material/Grid';
 const Report = () => {
   return (
     <>
+<<<<<<< HEAD
     <Box sx={{ display: 'flex', alignItems: 'center', m:5}}>
       <Grid className = "report-container">
+=======
+      <div className = "report-container">
+>>>>>>> ecea3e57368b41a460077ef60e4d7000bfa2d6cd
       <h1 className = "text-left">Report</h1>
       <Chart />
       <SpentEarned />

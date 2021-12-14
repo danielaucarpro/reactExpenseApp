@@ -13,18 +13,18 @@ import Report from '../components/Report/Report';
 const AppRouter = () => {
     //returning pages to be render, required for react-router-dom v6.
     return (
-        <div className='container'>
-            <BrowserRouter>
-                {/* "Routes" is the new switch, and element is the new component. */}
-                <Routes>
-                    <Route path='/' element={<SignIn />} exact={true} />
-                    <Route path='/signUp' element={<SignUp />} />
-                    <Route path='/overview' element={<Overview />} />
-                    <Route path='/AddPayment' element={<AddPayment />} />
-                    <Route path='/report' element={<Report />} />
-                </Routes>
-            </BrowserRouter>
-        </div>
+            <div className='container'>
+                <BrowserRouter>
+                    {/* "Routes" is the new switch, and element is the new component. */}
+                    <Routes>
+                        <Route path='/' element={<SignIn />} exact={true} />
+                        <Route path='/signUp' element={<SignUp />} />
+                        <Route path='/overview' element={<Overview />} />
+                        <Route path='/AddPayment' element={<AddPayment />} />
+                        <Route path='/report' element={<Report />} />
+                    </Routes>
+                </BrowserRouter>
+            </div>
     );
 
 }

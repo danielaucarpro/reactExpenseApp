@@ -33,3 +33,29 @@ input {
     outline: none;
     box-shadow: none;
 } */
+
+.addPayment-backBtn{
+    text-decoration: none;
+    color: black;
+}
+
+.addPayment-header{
+    margin: 1rem;
+    margin-top: 2rem;
+    padding-right: 15rem !important;
+}
+
+.addPayment-title{
+    margin: 0rem !important;
+    color: gray;
+    padding-right: 10rem !important;
+}
+
+.addPayment-boxContainer{
+    margin: 0rem !important;
+}
+
+.addPayment-formContainer{
+    display: flex;
+    flex-flow: column;
+}
