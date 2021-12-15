@@ -19,8 +19,8 @@ export const AddPayment = () => {
     //Hook. create state and a function to manipulate the state (setText and setAmount)
     const [text, setText] = useState('');
     const [date, setDate] = useState('');
-    const [amount, setAmount] = useState(0);
     const [categories, setCategories] = useState('');
+    const [amount, setAmount] = useState(0);
 
     //use transaction action
     const { addTransaction } = useContext(GlobalContext);
@@ -28,15 +28,15 @@ export const AddPayment = () => {
     const onSubmit = async e => {
         e.preventDefault();
 
-        const newTRansaction = {
-            //passinf value into object
-            text,
-            date,
-            categories,
-            amount: +amount
-        }
+        // const newTRansaction = {
+        //     //passinf value into object
+        //     text,
+        //     date,
+        //     categories,
+        //     amount: +amount
+        // }
 
-        console.log('new transaction', newTRansaction);
+        // console.log('new transaction', newTRansaction);
 
         if (text === '' || date === '' || amount === '' || categories === '') {
             alert('You must complete all fields!')
@@ -48,19 +48,21 @@ export const AddPayment = () => {
                     'x-access-token': localStorage.getItem('access-token'),
                 },
                 body: JSON.stringify({
-                    text,
-                    date,
-                    categories,
+                    name: text,
+                    date: date,
+                    categories: categories,
                     amount: +amount
                 })
             })
-            
+
+            console.log(response);
+
             const data = await response.json();
             console.log(data.data[0], "data");
             alert(data.message);
 
             //call addTransaction from context and passing newTransaction
-            addTransaction(newTRansaction);
+            // addTransaction(newTRansaction);
             setText('');
             setDate('');
             setAmount('');

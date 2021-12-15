@@ -43,7 +43,7 @@ useEffect(() => {
   mainData.datasets = [
     {
       label: "# of Votes",
-      data: expense.map((data) => {return data.amount}), //??
+      data:[25, 6, 2, 7, 8, 24], //??
       backgroundColor: [
         'rgba(255, 99, 132, 0.5)',
         'rgba(54, 162, 235, 0.5)',
@@ -61,7 +61,7 @@ useEffect(() => {
 
 }, [history])
 
-  return <PolarArea data={expense} />;
+  return <PolarArea data={data} />;
 }
 
 // function getRandomColor() {
