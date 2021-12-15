@@ -20,7 +20,7 @@ ChartJS.register(
 );
 
 export const data = {
-    labels: ['Thing 1', 'Thing 2', 'Thing 3', 'Thing 4', 'Thing 5', 'Thing 6'],
+    labels: ['Groceries', 'Food', 'Entertainment', 'Travel', 'Bill', 'Fuel'],
     datasets: [
         {
             label: '# of Votes',

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 const FetchUsersTransactions = () => {
     //user hook
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState();
 
     //fetching API
     useEffect(async () => {
@@ -18,14 +18,16 @@ const FetchUsersTransactions = () => {
                 }
             })
             const data = await response.json();
-            setUser(data.data);
+            if (data.data.length > 0) {
+                setUser(data.data);
+            }
             // console.log(data.data);
         }
-
     }, []);
 
     //returning user hook in order to use the user's transaction list (in db)
     return user
+
 }
 
 export default FetchUsersTransactions;
