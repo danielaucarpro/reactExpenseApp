@@ -1,9 +1,18 @@
 .SpentEarned{
   display: flex;
   justify-content: space-between;
-  /* width: 70%; */
-  height: 85px;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 1rem;
   padding: 0rem 2rem
+}
+
+h4 {
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+p {
+  font-family: 'Yu Mincho';
+  opacity: 0.8;
+  font-size: 1rem;
+  font-weight: bold;
 }

@@ -32,15 +32,15 @@ const spent = (
       label: '# of Votes',
       data: [spent, earned],
       borderColor: [
-        'rgba(65, 110, 238, 0.5 )',
-        'rgba(255, 187, 86, 0.5 )',
+        'rgba(65, 110, 238, 1 )',
+        'rgba(255, 187, 86, 1 )',
       ],
       backgroundColor: [
-        'rgba(65, 110, 238, 0.8)',
-        'rgba(255, 187, 86, 0.8)',
+        'rgba(65, 110, 238, 1)',
+        'rgba(255, 187, 86, 1)',
       ],
       borderWidth: 1,
-      bordershadow: 1,
+      bordershadow: 2,
     },
   ],
 };
