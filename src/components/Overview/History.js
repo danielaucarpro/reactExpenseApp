@@ -11,6 +11,8 @@ import PopUp from './PopUp';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 //css
 import './History.css'
+//fetching data
+import FetchUsersTransactions from '../ContextAPI/FetchUsersTransactions';
 
 export default function History(props) {
 
@@ -22,6 +24,8 @@ export default function History(props) {
     const { deleteTransaction } = useContext(GlobalContext);
     const { updateTransaction } = useContext(GlobalContext);
     const [isUpdating, setIsUpdating] = useState({ open: false });
+    //importing data from the fetch js
+    const userTransactions = [FetchUsersTransactions()][0];
 
     const popUpModal = (id) => {
 

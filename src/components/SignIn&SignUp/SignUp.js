@@ -23,7 +23,7 @@ const SignUp = () => {
         if (name === '' || email === '' || password === '') {
             alert('Something went wrong! Please fill up the form.')
         } else {
-            const response = await fetch('http://localhost:5000/auth/signup', {
+            const response = await fetch('http://ec2-3-96-201-188.ca-central-1.compute.amazonaws.com/api/auth/signup', {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json"
