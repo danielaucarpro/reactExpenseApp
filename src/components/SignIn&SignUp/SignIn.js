@@ -24,7 +24,7 @@ const SignIn = () => {
         if (email === '' || password === '') {
             alert('Unvalid email or password! Please try again.');
         } else {
-            const response = await fetch('http://localhost:5000/auth/login', {
+            const response = await fetch('http://ec2-3-96-201-188.ca-central-1.compute.amazonaws.com/api/auth/login', {
                 method: "POST",
                 headers: {
                     'Content-Type': "application/json",

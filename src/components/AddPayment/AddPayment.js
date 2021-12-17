@@ -28,13 +28,13 @@ export const AddPayment = () => {
     const onSubmit = async e => {
         e.preventDefault();
 
-        // const newTRansaction = {
-        //     //passinf value into object
-        //     text,
-        //     date,
-        //     categories,
-        //     amount: +amount
-        // }
+        const newTRansaction = {
+            //passinf value into object
+            text,
+            date,
+            categories,
+            amount: +amount
+        }
 
         // console.log('new transaction', newTRansaction);
 
@@ -42,7 +42,7 @@ export const AddPayment = () => {
             alert('You must complete all fields!')
         } else {
             // Sync a post with a user
-            const response = await fetch('http://localhost:5000/post', {
+            const response = await fetch('http://ec2-3-96-201-188.ca-central-1.compute.amazonaws.com/api/post', {
                 method: "POST",
                 headers: {
                     'x-access-token': localStorage.getItem('access-token'),
@@ -67,6 +67,7 @@ export const AddPayment = () => {
             setDate('');
             setAmount('');
             setCategories('');
+            addTransaction()
         }
 
     }

@@ -32,15 +32,7 @@ export const GlobalContext = createContext(inicialState);
 Since this data will be pass for my children components,
 We need to pass children as a props*/
 export const GlobalProvider = ({ children }) => {
-    //initial state
-    // const [inicialState, setInicialState] = useState([])
-    //user data from database
-    const userTransactions = [FetchUsersTransactions()][0];
-    console.log(userTransactions);
-    // useEffect(() => {
-    //     setInicialState(userTransactions)
-    // })
-    //calling the reducer
+
     const [state, dispatch] = useReducer(AppReducer, inicialState);
 
     //ACTIONS
