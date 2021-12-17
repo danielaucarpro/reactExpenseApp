@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import moment from "moment";
 import { GlobalContext } from "../ContextAPI/GlobalState";
 //css
 import './Balance.css';
@@ -11,7 +12,6 @@ const Balance = () => {
     using destructuring to avoid messy code.
     with out destructuring we need to context.history to map the array*/
     const { history } = useContext(GlobalContext);
-    console.log(history, "balance");
 
     //getting all the amounts into an array
     const amount = history.map(values => values.amount);
@@ -20,9 +20,9 @@ const Balance = () => {
 
     return (
         <>
-            <h4 className='balance-text'>This month balance</h4>
+            <h4 className='balance-text'>Total balance</h4>
             <span className='balance-amunt'>
-                <AttachMoneyIcon className='balance-icon'/>
+                <AttachMoneyIcon className='balance-icon' />
                 {total}
             </span>
         </>

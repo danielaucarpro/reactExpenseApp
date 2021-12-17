@@ -11,7 +11,7 @@ const AppReducer = (state, action) => {
                 state.splice(index, 1);
             }
             return state;
-            // return [...state, state.splice(item => item.id !== action.payload)];
+            // return [. ..state, state.splice(item => item.id !== action.payload)];
         case 'ADD':
             return [...state, action.payload];
         case 'UPDATE':

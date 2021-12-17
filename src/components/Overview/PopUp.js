@@ -13,8 +13,12 @@ const PopUp = (props) => {
     const [newAmount, setNewAmount] = useState('');
 
 
-    const callDelete = () => {
+    const callDelete = async () => {
         props.delete(props.popUpData.id);
+        const res = await fetch(`http://ec2-3-96-201-188.ca-central-1.compute.amazonaws.com/api/post//delete/${props.popUpData.id}`, {
+            method: 'DELETE',
+        })
+        console.log(res);
         closePopUp();
     }
 
@@ -32,10 +36,6 @@ const PopUp = (props) => {
             props.update(newData);
             closePopUp();
         }
-    }
-
-    const capitalizeFirstLetter = (string) => {
-        return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
     const closePopUp = () => {

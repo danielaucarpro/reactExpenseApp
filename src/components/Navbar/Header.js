@@ -12,7 +12,7 @@ const Header = () => {
         <>
         <div className='header-container'>
             {/* logout is just for debugging, delete later */}
-            <Link to='/'><LogoutIcon /></Link>
+            {/* <Link to='/'><LogoutIcon /></Link> */}
             <MenuIcon className='header-menuIcon'/>
         </div>
 
